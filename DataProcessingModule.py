@@ -29,19 +29,9 @@ def LoadData(scenario_name, EM_index_ori, EM_index_compare, device):
     data_all_ori = torch.cat(data_all_ori, dim=0)
     data_all_compare = torch.cat(data_all_compare, dim=0)
 
-    # data_all_ori = data_all_ori.to(device); data_all_compare = data_all_compare.to(device)
-    if scenario_name == 'sy':
-        change_data(data_all_ori,[17,8,3]);change_data(data_all_ori,[17,8,4])
-        change_data(data_all_compare,[17,8,3]);change_data(data_all_compare,[17,8,4])
-    else: # [4,2,6],[4,1,6]
-        change_data(data_all_ori,[4,2,6]);change_data(data_all_ori,[4,1,6])
-        change_data(data_all_compare,[4,2,6]);change_data(data_all_compare,[4,1,6])
-
     return data_all_ori, data_all_compare
 
-def change_data(data, idx):
-    data[:,idx[0], idx[1],idx[2],:,:] =   (data[:,idx[0]+1, idx[1],idx[2],:,:] + data[:,idx[0]-1, idx[1],idx[2],:,:])/2
-    return data
+
 # One-hot encoding for the labels
 def convert_to_one_hot(Y_data):
     # Convert the 3D coordinates to string
