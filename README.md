@@ -10,3 +10,5 @@ Set Mask Ratio if needed:
 NUM_MUSK = 0; # Set how many random sub-channels unavailable 0-8
 
 Data is avaiblable at: https://drive.google.com/drive/folders/1cNlbyR5yhDjr-fpA2fttO7pcKPuFp-5m?usp=sharing
+
+Please contact wangxiping@bjtu.edu.cn if there is any issue.
